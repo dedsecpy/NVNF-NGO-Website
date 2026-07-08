@@ -1,0 +1,19 @@
+You are building "New Vision Nepal Foundation" — a Nepali NGO website.
+
+ALWAYS:
+- Use TypeScript strictly (no `any`)
+- Use Tailwind CSS utility classes (no inline styles)
+- Use Framer Motion for all animations
+- Fetch CMS data via Sanity client with ISR (revalidate: 60)
+- Handle loading and error states on every async component
+- Make every component fully responsive (mobile-first)
+- Follow the design system: saffron (#E8690B), forest green (#1B4332)
+- Use Playfair Display for headings, Inter for body text
+- Add ARIA labels and semantic HTML for accessibility
+
+NEVER:
+- Use `<img>` — always `next/image`
+- Use `@ts-ignore` or `any` type
+- Use hardcoded content that should come from Sanity
+- Skip mobile styles
+- Add animations without respecting prefers-reduced-motion

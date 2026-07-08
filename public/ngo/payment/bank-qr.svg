@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Bank payment QR code placeholder">
+  <rect width="200" height="200" fill="#fff"/>
+  <rect x="8" y="8" width="52" height="52" fill="#1C1C1E"/>
+  <rect x="16" y="16" width="36" height="36" fill="#fff"/>
+  <rect x="24" y="24" width="20" height="20" fill="#1C1C1E"/>
+  <rect x="140" y="8" width="52" height="52" fill="#1C1C1E"/>
+  <rect x="148" y="16" width="36" height="36" fill="#fff"/>
+  <rect x="156" y="24" width="20" height="20" fill="#1C1C1E"/>
+  <rect x="8" y="140" width="52" height="52" fill="#1C1C1E"/>
+  <rect x="16" y="148" width="36" height="36" fill="#fff"/>
+  <rect x="24" y="156" width="20" height="20" fill="#1C1C1E"/>
+  <g fill="#1C1C1E">
+    <rect x="72" y="12" width="8" height="8"/><rect x="88" y="12" width="8" height="8"/><rect x="104" y="12" width="8" height="8"/>
+    <rect x="72" y="28" width="8" height="8"/><rect x="96" y="28" width="8" height="8"/><rect x="120" y="28" width="8" height="8"/>
+    <rect x="72" y="72" width="8" height="8"/><rect x="88" y="88" width="8" height="8"/><rect x="104" y="72" width="8" height="8"/>
+    <rect x="120" y="88" width="8" height="8"/><rect x="136" y="72" width="8" height="8"/><rect x="152" y="88" width="8" height="8"/>
+    <rect x="72" y="104" width="8" height="8"/><rect x="96" y="120" width="8" height="8"/><rect x="112" y="104" width="8" height="8"/>
+    <rect x="128" y="120" width="8" height="8"/><rect x="144" y="104" width="8" height="8"/><rect x="160" y="120" width="8" height="8"/>
+    <rect x="72" y="144" width="8" height="8"/><rect x="88" y="160" width="8" height="8"/><rect x="104" y="176" width="8" height="8"/>
+    <rect x="120" y="144" width="8" height="8"/><rect x="136" y="168" width="8" height="8"/><rect x="152" y="184" width="8" height="8"/>
+    <rect x="168" y="144" width="8" height="8"/><rect x="176" y="160" width="8" height="8"/><rect x="184" y="176" width="8" height="8"/>
+  </g>
+</svg>

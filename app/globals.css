@@ -4,24 +4,173 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1c1c1e;
+  --nav-height: 64px;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (min-width: 768px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --nav-height: 104px;
   }
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative font-medium text-charcoal transition-colors duration-300 hover:text-sky;
+  }
+
+  .nav-link::after {
+    @apply absolute -bottom-1 left-0 h-0.5 w-0 bg-sky transition-all duration-300 content-[''];
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .prose-link {
+    @apply font-bold text-sky underline decoration-sky/30 underline-offset-4 hover:decoration-sky;
+  }
+
+  .hero-viewport {
+    height: calc(100dvh - var(--nav-height, 64px));
+    min-height: calc(100dvh - var(--nav-height, 64px));
+  }
+
+  /* ── Homepage hero launch (CSS-first = instant paint, no JS wait) ── */
+  .hero-launch {
+    @apply relative isolate w-full overflow-hidden;
+    background-color: #4a4a4a;
+  }
+
+  .hero-launch__bg {
+    position: absolute;
+    inset: -10%;
+    background-image: url("/ngo/hero/hero-home.jpg");
+    background-size: cover;
+    background-position: 72% 20%;
+    filter: grayscale(100%);
+    transform: scale(1.08);
+    animation: hero-ken-burns 16s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    will-change: transform;
+  }
+
+  .hero-launch__overlay {
+    @apply absolute inset-0;
+    background: rgb(28 28 30 / 0.22);
+  }
+
+  .hero-launch__inner {
+    @apply relative z-10 mx-auto flex h-full max-w-7xl items-center px-4 py-12 sm:px-6 sm:py-16 lg:px-8;
+  }
+
+  .hero-launch__eyebrow {
+    animation: hero-slide-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.08s both;
+  }
+
+  .hero-launch__headline {
+    animation: hero-slide-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both;
+  }
+
+  .hero-launch__copy {
+    animation: hero-slide-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+  }
+
+  .hero-launch__cta {
+    animation: hero-rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.42s both;
+  }
+
+  .hero-launch__credit {
+    animation: hero-fade-in 0.6s ease 0.55s both;
+  }
+
+  @keyframes hero-ken-burns {
+    from {
+      transform: scale(1.1);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes hero-slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(-22px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes hero-rise-in {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes hero-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 0.7;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-launch__bg {
+      animation: none;
+      transform: scale(1);
+    }
+
+    .hero-launch__eyebrow,
+    .hero-launch__headline,
+    .hero-launch__copy,
+    .hero-launch__cta,
+    .hero-launch__credit {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
   }
 }

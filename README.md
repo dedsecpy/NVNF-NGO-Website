@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# New Vision Nepal Foundation
+
+Full-stack NGO website built with Next.js 14, Sanity CMS, Supabase, and Tailwind CSS.
+
+## Tech Stack
+
+- **Frontend:** Next.js 14 (App Router) + TypeScript + Tailwind CSS + Framer Motion
+- **CMS:** Sanity.io
+- **Database:** Supabase (donations, contacts)
+- **Auth:** NextAuth.js (admin-only)
+- **Deployment:** Vercel
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install dependencies
+
+```bash
+npm install --legacy-peer-deps
+```
+
+**Windows PowerShell:** If you see `npm.ps1 cannot be loaded`, use either:
+
+```powershell
+# Option A — use .cmd shim (recommended)
+.\install.cmd
+
+# Option B — call npm.cmd directly
+npm.cmd install --legacy-peer-deps
+
+# Option C — bypass for this terminal session only
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+npm install --legacy-peer-deps
+```
+
+### 2. Configure environment
+
+Copy `.env.example` to `.env.local` and fill in values.
+
+Generate admin password hash:
+
+```bash
+node -e "console.log(require('bcryptjs').hashSync('your-password', 12))"
+```
+
+In `.env.local`, escape every `$` in the hash with a backslash (e.g. `\$2b\$12\$...`) so Next.js does not corrupt it.
+
+### 3. Run Supabase migration
+
+Apply `supabase/migrations/001_init.sql` in your Supabase SQL editor.
+
+### 4. Start development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Note:** Without Sanity credentials, the site uses built-in fallback content.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Admin Access
 
-## Learn More
+1. Set `ADMIN_EMAIL` and `ADMIN_PASSWORD_HASH` in `.env.local`
+2. Visit `/admin/login`
+3. After login, access Sanity Studio at `/admin/studio`
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment (Vercel)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Push to GitHub
+2. Import project in Vercel
+3. Add all environment variables from `.env.example`
+4. Deploy
