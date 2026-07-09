@@ -133,7 +133,7 @@ export function DonationModal({ isOpen, onClose }: DonationModalProps) {
                   </p>
                 </div>
               </div>
-              <div className="flex-1 bg-section-beige p-5 text-sm leading-relaxed text-charcoal/80">
+              <div className="hidden flex-1 bg-section-beige p-5 text-sm leading-relaxed text-charcoal/80 md:block">
                 <p>
                   Your donation funds meals, education, and emergency relief in communities
                   where government services cannot reach. Every rupee is tracked and reported
