@@ -19,7 +19,9 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXTAUTH_URL ?? "https://newvisionnepal.org";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
+  "https://www.newvisionfoundation.org.np";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -40,10 +42,11 @@ export const metadata: Metadata = {
     description: "Rebuilding Nepal. One Life at a Time.",
     images: [
       {
-        url: "/og-home.jpg",
+        url: `${siteUrl}/og-home.jpg`,
         width: 1200,
         height: 630,
         alt: "Stand with Sarlahi's communities — New Vision Nepal Foundation",
+        type: "image/jpeg",
       },
     ],
   },
@@ -51,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "New Vision Nepal Foundation",
     description: "Rebuilding Nepal. One Life at a Time.",
-    images: ["/og-home.jpg"],
+    images: [`${siteUrl}/og-home.jpg`],
   },
   robots: {
     index: true,
