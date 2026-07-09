@@ -163,15 +163,6 @@ export function Navbar({ ticker }: { ticker?: TickerSettings }) {
           <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
             <button
               type="button"
-              className="hidden text-white lg:block"
-              aria-label="Search"
-            >
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </button>
-            <button
-              type="button"
               onClick={openDonation}
               className="hidden rounded-full bg-action px-5 py-2 text-xs font-bold uppercase tracking-wide text-charcoal transition-transform hover:scale-105 lg:block"
             >
