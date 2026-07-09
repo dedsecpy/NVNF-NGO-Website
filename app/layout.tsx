@@ -40,10 +40,10 @@ export const metadata: Metadata = {
     description: "Rebuilding Nepal. One Life at a Time.",
     images: [
       {
-        url: "/ngo/hero/hero-home.jpg",
-        width: 1920,
-        height: 1280,
-        alt: "A family in Sarlahi, Nepal supported by New Vision Nepal Foundation",
+        url: "/og-home.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Stand with Sarlahi's communities — New Vision Nepal Foundation",
       },
     ],
   },
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "New Vision Nepal Foundation",
     description: "Rebuilding Nepal. One Life at a Time.",
-    images: ["/ngo/hero/hero-home.jpg"],
+    images: ["/og-home.jpg"],
   },
   robots: {
     index: true,
