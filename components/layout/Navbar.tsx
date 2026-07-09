@@ -105,9 +105,10 @@ export function Navbar({ ticker }: { ticker?: TickerSettings }) {
             <Image
               src="/logo.png"
               alt=""
-              width={48}
-              height={48}
-              className="h-12 w-12 shrink-0 rounded-full bg-white/95 object-cover p-0.5 shadow-md ring-1 ring-white/40 transition-transform duration-300 group-hover:scale-105 lg:h-12 lg:w-12"
+              width={112}
+              height={112}
+              quality={100}
+              className="h-12 w-12 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105 lg:h-14 lg:w-14"
               priority
             />
             <span className="hidden h-9 w-px shrink-0 bg-white/25 lg:block" aria-hidden="true" />
