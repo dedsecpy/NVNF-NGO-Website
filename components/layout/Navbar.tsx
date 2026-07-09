@@ -123,27 +123,41 @@ export function Navbar({ ticker }: { ticker?: TickerSettings }) {
           </Link>
 
           <ul className="hidden flex-1 items-center justify-center gap-1 lg:flex" role="list">
-            {megaMenus.map((item) => (
-              <li key={item.id} className="relative">
-                <button
-                  type="button"
-                  onClick={() => setActiveMenu(activeMenu === item.id ? null : item.id)}
-                  className={cn(
-                    "flex items-center gap-1 px-4 py-2 text-sm font-medium text-white transition-colors hover:text-white/90",
-                    activeMenu === item.id && "border-b-2 border-white"
-                  )}
-                  aria-expanded={activeMenu === item.id}
-                >
-                  {item.label}
-                  <ChevronDown
+            {megaMenus.map((item) =>
+              item.hasDropdown ? (
+                <li key={item.id} className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setActiveMenu(activeMenu === item.id ? null : item.id)}
                     className={cn(
-                      "transition-transform",
-                      activeMenu === item.id && "rotate-180"
+                      "flex items-center gap-1 px-4 py-2 text-sm font-medium text-white transition-colors hover:text-white/90",
+                      activeMenu === item.id && "border-b-2 border-white"
                     )}
-                  />
-                </button>
-              </li>
-            ))}
+                    aria-expanded={activeMenu === item.id}
+                  >
+                    {item.label}
+                    <ChevronDown
+                      className={cn(
+                        "transition-transform",
+                        activeMenu === item.id && "rotate-180"
+                      )}
+                    />
+                  </button>
+                </li>
+              ) : (
+                <li key={item.id} className="relative">
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      "flex items-center px-4 py-2 text-sm font-medium text-white transition-colors hover:text-white/90",
+                      pathname === item.href && "border-b-2 border-white"
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              )
+            )}
           </ul>
 
           <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">

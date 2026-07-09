@@ -12,6 +12,7 @@ export interface MegaMenuItem {
   id: string;
   label: string;
   href: string;
+  hasDropdown?: boolean;
   columns: MegaMenuColumn[];
   featured: {
     title: string;
@@ -30,16 +31,16 @@ export const megaMenus: MegaMenuItem[] = [
     columns: [
       {
         links: [
-          { label: "Donate once", href: "/get-involved" },
-          { label: "Monthly giving", href: "/get-involved" },
+          { label: "Donate once", href: "/get-involved#ways-to-give" },
+          { label: "Monthly giving", href: "/get-involved#ways-to-give" },
           { label: "Corporate partnerships", href: "/contact" },
-          { label: "Fundraise for us", href: "/get-involved" },
+          { label: "Fundraise for us", href: "/contact" },
         ],
       },
       {
         title: "Ways to give",
         links: [
-          { label: "Emergency appeals", href: "/get-involved" },
+          { label: "Emergency appeals", href: "/news" },
           { label: "Sponsor a programme", href: "/work/women-empowerment" },
           { label: "Leave a legacy", href: "/contact" },
           { label: "In-kind donations", href: "/contact" },
@@ -59,6 +60,7 @@ export const megaMenus: MegaMenuItem[] = [
     id: "work",
     label: "What we do",
     href: "/work",
+    hasDropdown: true,
     columns: [
       {
         links: [{ label: "Our programs", href: "/work" }],
@@ -143,8 +145,8 @@ export const megaMenus: MegaMenuItem[] = [
         title: "Media hub",
         links: [
           { label: "News & media centre", href: "/news" },
-          { label: "Press releases", href: "/news" },
-          { label: "Our statements", href: "/news" },
+          { label: "Press releases", href: "/news/vaccination-education" },
+          { label: "Our statements", href: "/news/child-health-sassapur" },
         ],
       },
       {
@@ -152,7 +154,7 @@ export const megaMenus: MegaMenuItem[] = [
         links: [
           { label: "Annual reports", href: "/impact" },
           { label: "Impact stories", href: "/impact" },
-          { label: "Policy briefs", href: "/news" },
+          { label: "Policy briefs", href: "/problems" },
         ],
       },
     ],

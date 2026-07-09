@@ -35,7 +35,7 @@ export function GetInvolvedWays() {
   const { transition, stagger, prefersReducedMotion } = useMotion();
 
   return (
-    <Section className="bg-white py-10 md:py-16">
+    <Section className="bg-white py-10 md:py-16" id="ways-to-give">
       <Container>
         <div className="grid gap-8 md:grid-cols-3">
           {ways.map((item, i) => {

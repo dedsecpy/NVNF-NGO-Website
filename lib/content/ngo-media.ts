@@ -29,8 +29,6 @@ export const ngoMedia = {
     bindeshwor: "/ngo/team/Bindeshwor.jpg",
     purna: "/ngo/team/Purna.jpg",
     tezKumari: "/ngo/team/Tez Kumari.jpg",
-    placeholderMale: "/ngo/team/portrait-young-redhead-bearded-male.jpg",
-    placeholderFemale: "/ngo/team/portrait-beautiful-young-woman-standing-grey-wall.jpg",
   },
 } as const;
 

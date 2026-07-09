@@ -3,8 +3,9 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Container, Section } from "@/components/ui/Section";
+import { cn } from "@/lib/utils";
 import { useMotion } from "@/hooks/useMotion";
-import { getTeamPhotoUrl } from "@/lib/sanity/team-images";
+import { getTeamPhotoUrl, getInitials, getAvatarColorClass } from "@/lib/sanity/team-images";
 import type { TeamMember } from "@/lib/sanity/types";
 
 interface TeamProps {
@@ -44,7 +45,19 @@ export function Team({ members }: TeamProps) {
                 className="text-center"
               >
                 <div className="relative mx-auto h-40 w-40 overflow-hidden rounded-full ring-4 ring-sky/20">
-                  <Image src={photoUrl} alt={member.name} fill className="object-cover" sizes="160px" />
+                  {photoUrl ? (
+                    <Image src={photoUrl} alt={member.name} fill className="object-cover" sizes="160px" />
+                  ) : (
+                    <div
+                      className={cn(
+                        "flex h-full w-full items-center justify-center font-display text-4xl font-bold text-white",
+                        getAvatarColorClass(member._id)
+                      )}
+                      aria-hidden="true"
+                    >
+                      {getInitials(member.name)}
+                    </div>
+                  )}
                 </div>
                 <h3 className="mt-5 text-lg font-bold text-charcoal">{member.name}</h3>
                 <p className="text-sm font-semibold text-sky">{member.role}</p>

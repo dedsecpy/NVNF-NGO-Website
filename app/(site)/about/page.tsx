@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHero } from "@/components/layout/PageHero";
+import { ChairpersonSpotlight } from "@/components/sections/ChairpersonSpotlight";
 import { Team } from "@/components/sections/Team";
 import { Timeline } from "@/components/sections/Timeline";
 import { getSiteSettings, getTeamMembers, getTimelineEvents } from "@/lib/sanity/fetch";
@@ -18,10 +18,10 @@ export default async function AboutPage() {
 
   return (
     <>
-      <PageHero
-        eyebrow="About NVNF"
-        title="Our story"
-        description={`Founded in ${settings.foundedYear} in the wake of the devastating Gorkha earthquake, New Vision Nepal Foundation began as a grassroots response to human suffering. Today, we serve ${settings.districtsServed} districts and have impacted over ${settings.livesImpacted.toLocaleString()} lives.`}
+      <ChairpersonSpotlight
+        foundedYear={settings.foundedYear}
+        livesImpacted={settings.livesImpacted}
+        districtsServed={settings.districtsServed}
       />
       <Team members={team} />
       <Timeline events={timeline} />
