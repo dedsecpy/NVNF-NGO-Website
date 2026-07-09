@@ -38,11 +38,20 @@ export const metadata: Metadata = {
     siteName: "New Vision Nepal Foundation",
     title: "New Vision Nepal Foundation",
     description: "Rebuilding Nepal. One Life at a Time.",
+    images: [
+      {
+        url: "/ngo/hero/hero-home.jpg",
+        width: 1920,
+        height: 1280,
+        alt: "A family in Sarlahi, Nepal supported by New Vision Nepal Foundation",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "New Vision Nepal Foundation",
     description: "Rebuilding Nepal. One Life at a Time.",
+    images: ["/ngo/hero/hero-home.jpg"],
   },
   robots: {
     index: true,
