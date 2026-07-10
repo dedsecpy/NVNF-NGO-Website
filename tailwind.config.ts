@@ -34,35 +34,6 @@ const config: Config = {
         card: "0 4px 24px rgba(0,0,0,0.08)",
         "card-hover": "0 12px 40px rgba(0,0,0,0.15)",
       },
-      animation: {
-        "glow-spin": "glow-spin 4s linear infinite",
-        "glow-spin-slow": "glow-spin 8s linear infinite",
-        "glow-spin-reverse": "glow-spin-reverse 6s linear infinite",
-        "glow-spin-82": "glow-spin-82 5s linear infinite",
-        "glow-spin-83": "glow-spin-83 7s linear infinite",
-      },
-      keyframes: {
-        "glow-spin": {
-          "0%": { transform: "translate(-50%, -50%) rotate(0deg)" },
-          "100%": { transform: "translate(-50%, -50%) rotate(360deg)" },
-        },
-        "glow-spin-reverse": {
-          "0%": { transform: "translate(-50%, -50%) rotate(360deg)" },
-          "100%": { transform: "translate(-50%, -50%) rotate(0deg)" },
-        },
-        "glow-spin-82": {
-          "0%": { transform: "translate(-50%, -50%) rotate(82deg)" },
-          "100%": { transform: "translate(-50%, -50%) rotate(442deg)" },
-        },
-        "glow-spin-83": {
-          "0%": { transform: "translate(-50%, -50%) rotate(83deg)" },
-          "100%": { transform: "translate(-50%, -50%) rotate(443deg)" },
-        },
-      },
-      transitionDuration: {
-        2000: "2000ms",
-        4000: "4000ms",
-      },
       fontSize: {
         "fluid-sm": "clamp(0.875rem, 0.8rem + 0.25vw, 1rem)",
         "fluid-base": "clamp(1rem, 0.9rem + 0.4vw, 1.125rem)",

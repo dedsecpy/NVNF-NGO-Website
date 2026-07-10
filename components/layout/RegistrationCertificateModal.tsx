@@ -3,28 +3,23 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { AnimatedGlowingFrame } from "@/components/ui/AnimatedGlowingFrame";
 import { useMotion } from "@/hooks/useMotion";
 
-const STORAGE_KEY = "nvnf-registration-cert-dismissed";
+const OPEN_DELAY_MS = 1000;
 
 export function RegistrationCertificateModal() {
   const [isOpen, setIsOpen] = useState(false);
   const { transition, prefersReducedMotion } = useMotion();
 
   useEffect(() => {
-    const dismissed = sessionStorage.getItem(STORAGE_KEY);
-    if (dismissed) return;
-
     const timer = window.setTimeout(() => {
       setIsOpen(true);
-    }, 1000);
+    }, OPEN_DELAY_MS);
 
     return () => window.clearTimeout(timer);
   }, []);
 
   function handleClose() {
-    sessionStorage.setItem(STORAGE_KEY, "1");
     setIsOpen(false);
   }
 
@@ -72,7 +67,7 @@ export function RegistrationCertificateModal() {
               ✕
             </button>
 
-            <AnimatedGlowingFrame>
+            <div className="relative overflow-hidden rounded-2xl shadow-card">
               <Image
                 src="/ngo/certificates/registration.jpeg"
                 alt="Official registration certificate of New Vision Nepal Foundation"
@@ -83,7 +78,11 @@ export function RegistrationCertificateModal() {
                 sizes="(max-width: 640px) 90vw, 448px"
                 priority
               />
-            </AnimatedGlowingFrame>
+              <div
+                className="pointer-events-none absolute inset-0 rounded-2xl border-[3px] border-action sm:border-4"
+                aria-hidden="true"
+              />
+            </div>
           </motion.div>
         </motion.div>
       )}
