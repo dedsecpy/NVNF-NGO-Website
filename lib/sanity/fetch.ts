@@ -133,6 +133,15 @@ const fallbackPrograms: Program[] = [
 
 const fallbackNews: NewsPost[] = [
   {
+    _id: "n5",
+    title: "Sonam Village Drug Rehabilitation Campaign",
+    slug: { current: "sonam-village-drug-rehabilitation" },
+    author: "NVNF Rehabilitation Team",
+    publishedAt: "2026-07-12T00:00:00Z",
+    excerpt:
+      "Community street drama and awareness sessions in Sonam Village — educating families on substance abuse prevention and connecting at-risk youth to rehabilitation support.",
+  },
+  {
     _id: "n1",
     title: "Children Health Awareness in Sassapur",
     slug: { current: "child-health-sassapur" },

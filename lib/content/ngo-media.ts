@@ -13,6 +13,7 @@ export const ngoMedia = {
     healthAwareness: "/ngo/programs/health-awareness.jpg",
   },
   news: {
+    sonamVillageDrugRehabilitation: "/ngo/news/sonam-village-drug-rehabilitation.jpg",
     childHealthSassapur: "/ngo/news/child-health-sassapur.jpg",
     womenEmpowerment: "/ngo/news/women-empowerment.jpg",
     drugDrama: "/ngo/news/drug-drama.jpg",

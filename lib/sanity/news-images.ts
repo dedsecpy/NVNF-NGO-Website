@@ -3,6 +3,7 @@ import type { NewsPost } from "@/lib/sanity/types";
 import { ngoMedia } from "@/lib/content/ngo-media";
 
 const NEWS_FALLBACK_IMAGES: Record<string, string> = {
+  "sonam-village-drug-rehabilitation": ngoMedia.news.sonamVillageDrugRehabilitation,
   "child-health-sassapur": ngoMedia.news.childHealthSassapur,
   "women-empowerment-programme": ngoMedia.news.womenEmpowerment,
   "drug-abuse-street-drama": ngoMedia.news.drugDrama,

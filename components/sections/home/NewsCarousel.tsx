@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { siteImages } from "@/lib/images/site-images";
+import { ngoMedia } from "@/lib/content/ngo-media";
 import { useMotion } from "@/hooks/useMotion";
 import type { NewsPost } from "@/lib/sanity/types";
 import { getNewsImageUrl } from "@/lib/sanity/news-images";
@@ -14,6 +15,15 @@ interface NewsCarouselProps {
 }
 
 const fallbackStories = [
+  {
+    _id: "n5",
+    title: "Sonam Village Drug Rehabilitation Campaign",
+    excerpt:
+      "Community street drama and awareness sessions in Sonam Village — educating families on substance abuse prevention and connecting at-risk youth to rehabilitation support.",
+    slug: { current: "sonam-village-drug-rehabilitation" },
+    publishedAt: "2026-07-12",
+    image: ngoMedia.news.sonamVillageDrugRehabilitation,
+  },
   {
     _id: "n1",
     title: "Children Health Awareness in Sassapur",

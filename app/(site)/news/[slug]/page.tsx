@@ -4,6 +4,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container, Section } from "@/components/ui/Section";
 import { PortableTextRenderer } from "@/components/PortableTextRenderer";
+import { NewsArticleView } from "@/components/news/NewsArticleView";
+import { getNewsStory } from "@/lib/content/news-stories";
 import { getNewsPostBySlug, getNewsSlugs } from "@/lib/sanity/fetch";
 import { getNewsImageUrl } from "@/lib/sanity/news-images";
 
@@ -26,12 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function NewsPostPage({ params }: Props) {
-  const { slug } = await params;
-  const post = await getNewsPostBySlug(slug);
-
-  if (!post) notFound();
-
+function SimpleNewsPost({ post }: { post: NonNullable<Awaited<ReturnType<typeof getNewsPostBySlug>>> }) {
   const imageUrl = getNewsImageUrl(post, 1200, 600);
 
   return (
@@ -76,4 +73,18 @@ export default async function NewsPostPage({ params }: Props) {
       </Section>
     </>
   );
+}
+
+export default async function NewsPostPage({ params }: Props) {
+  const { slug } = await params;
+  const post = await getNewsPostBySlug(slug);
+
+  if (!post) notFound();
+
+  const story = getNewsStory(slug);
+  if (story) {
+    return <NewsArticleView post={post} story={story} />;
+  }
+
+  return <SimpleNewsPost post={post} />;
 }
