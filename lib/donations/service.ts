@@ -13,6 +13,7 @@ export interface CreateDonationInput {
   frequency: "one_time" | "monthly";
   donor_name?: string;
   donor_email?: string;
+  donor_message?: string;
   payment_method?: "esewa" | "khalti" | "card";
 }
 
@@ -24,6 +25,7 @@ export interface DonationRecord {
   status: string;
   donor_name: string | null;
   donor_email: string | null;
+  donor_message: string | null;
   payment_method: "esewa" | "khalti" | "card" | null;
   created_at: string;
   pidx?: string | null;

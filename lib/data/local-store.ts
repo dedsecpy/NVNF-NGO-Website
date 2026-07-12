@@ -9,6 +9,7 @@ export interface LocalDonation {
   status: string;
   donor_name: string | null;
   donor_email: string | null;
+  donor_message: string | null;
   payment_method: "esewa" | "khalti" | "card" | null;
   created_at: string;
   pidx?: string | null;
@@ -39,6 +40,7 @@ const defaultStore: LocalStoreFile = {
       status: "pending",
       donor_name: null,
       donor_email: "supporter@example.com",
+      donor_message: null,
       payment_method: "khalti",
       created_at: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
     },
@@ -50,6 +52,7 @@ const defaultStore: LocalStoreFile = {
       status: "completed",
       donor_name: null,
       donor_email: null,
+      donor_message: null,
       payment_method: null,
       created_at: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),
     },
@@ -102,6 +105,7 @@ export async function insertLocalDonation(input: {
   frequency: "one_time" | "monthly";
   donor_name?: string;
   donor_email?: string;
+  donor_message?: string;
   payment_method?: "esewa" | "khalti" | "card";
 }): Promise<LocalDonation> {
   const store = await ensureStore();
@@ -113,6 +117,7 @@ export async function insertLocalDonation(input: {
     status: "pending",
     donor_name: input.donor_name ?? null,
     donor_email: input.donor_email ?? null,
+    donor_message: input.donor_message ?? null,
     payment_method: input.payment_method ?? null,
     created_at: new Date().toISOString(),
   };

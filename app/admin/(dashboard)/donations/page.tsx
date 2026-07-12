@@ -61,6 +61,11 @@ export default async function AdminDonationsPage() {
                       {row.donor_email ? (
                         <p className="text-xs text-charcoal/50">{row.donor_email}</p>
                       ) : null}
+                      {row.donor_message ? (
+                        <p className="mt-1 text-xs italic text-charcoal/60">
+                          &ldquo;{row.donor_message}&rdquo;
+                        </p>
+                      ) : null}
                     </td>
                     <td className="px-5 py-4 font-medium text-charcoal">
                       {formatNpr(Number(row.amount_npr))}

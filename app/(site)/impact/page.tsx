@@ -14,7 +14,7 @@ export default async function ImpactPage() {
 
   const stats = [
     { value: `${settings.livesImpacted.toLocaleString()}+`, label: "Lives impacted" },
-    { value: String(settings.districtsServed), label: "Districts served" },
+    { value: `${settings.districtsServed}+`, label: "Districts served" },
     {
       value: `${new Date().getFullYear() - settings.foundedYear}+`,
       label: "Years of service",
@@ -43,7 +43,7 @@ export default async function ImpactPage() {
           <div className="mt-12 rounded-xl bg-sky p-8 text-center text-white md:p-12">
             <h2 className="text-2xl font-bold">Where we work</h2>
             <p className="mx-auto mt-4 max-w-2xl text-white/90">
-              Our programs span {settings.districtsServed} districts across Nepal — from the Terai
+              Our programs span {settings.districtsServed}+ districts across Nepal — from the Terai
               lowlands to the high Himalayas. We go where the need is greatest and stay until
               communities can stand on their own.
             </p>

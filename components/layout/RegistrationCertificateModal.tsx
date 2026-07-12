@@ -79,7 +79,7 @@ export function RegistrationCertificateModal() {
                 priority
               />
               <div
-                className="pointer-events-none absolute inset-0 rounded-2xl border-[3px] border-action sm:border-4"
+                className="pointer-events-none absolute inset-0 rounded-2xl border-[3px] border-sky sm:border-4"
                 aria-hidden="true"
               />
             </div>

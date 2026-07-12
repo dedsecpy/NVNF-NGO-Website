@@ -12,6 +12,7 @@ const initiateSchema = z.object({
   amount_usd: z.number().optional(),
   donor_name: z.string().min(2),
   donor_email: z.string().email().optional(),
+  donor_message: z.string().max(500).optional(),
   payment_method: z.enum(["esewa", "khalti", "card"]),
 });
 
@@ -48,6 +49,7 @@ export async function POST(request: Request) {
       frequency: "one_time",
       donor_name: data.donor_name,
       donor_email: data.donor_email,
+      donor_message: data.donor_message,
       payment_method: data.payment_method,
     });
 

@@ -34,7 +34,7 @@ export function getProblemImageUrl(problem: Problem, width = 800, height = 1000)
 
 export function getProblemImageAlt(problem: Problem): string {
   const alts: Record<string, string> = {
-    p1: "Drug abuse awareness street drama in Sarlahi",
+    p1: "Drug abuse awareness street drama in Mahottari District, Samsi Village Municipality",
     p2: "Limited access to healthcare in rural Sarlahi",
     p3: "Women facing inequality in Madhesh communities",
     p4: "Rural poverty in Sarlahi district villages",

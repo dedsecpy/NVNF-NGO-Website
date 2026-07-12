@@ -21,7 +21,7 @@ export function ChairpersonSpotlight({
   const stats = [
     { value: `${foundedYear}`, label: "Founded" },
     { value: `${livesImpacted.toLocaleString()}+`, label: "Lives impacted" },
-    { value: `${districtsServed}`, label: "Districts served" },
+    { value: `${districtsServed}+`, label: "Districts served" },
   ];
 
   return (
@@ -76,7 +76,7 @@ export function ChairpersonSpotlight({
                 unshakeable belief — that every Nepali child, family, and community
                 deserves the dignity of opportunity. What began as a grassroots
                 response to hardship has grown, under her stewardship, into a
-                foundation reaching communities across {districtsServed} districts.
+                foundation reaching communities across {districtsServed}+ districts.
               </p>
               <p>
                 As Chairperson, Susmita leads with a hands-on approach. She works

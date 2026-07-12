@@ -92,7 +92,7 @@ export const programStories: Record<string, ProgramStory> = {
 
   "drug-rehabilitation": {
     when: "Street drama performances 24–26 March 2022 · Advocacy ongoing since 2072 B.S.",
-    where: "Schools, village squares, and public gatherings across Sarlahi district",
+    where: "Mahottari District, Samsi Village Municipality · schools, village squares, and public gatherings",
     what:
       "Drug abuse awareness and rehabilitation support — including community street dramas (लागु औषध सदक नाटक) and counselling for affected youth and families.",
     how:
@@ -109,7 +109,7 @@ export const programStories: Record<string, ProgramStory> = {
       {
         heading: "सदक नाटक — Street drama performances",
         paragraphs: [
-          "From 24 to 26 March 2022, NVNF's awareness team performed Lagu aushad सदक नाटक (street plays on substance abuse) across schools and village squares in Sarlahi. These performances use local actors, familiar settings, and powerful storytelling to show how addiction affects families.",
+          "From 24 to 26 March 2022, NVNF's awareness team performed Lagu aushad सदक नाटक (street plays on substance abuse) across schools and village squares in Mahottari District, Samsi Village Municipality. These performances use local actors, familiar settings, and powerful storytelling to show how addiction affects families.",
           "Youth who watch the dramas often stay after to ask questions. Our team connects at-risk individuals and families with counselling resources and information about legal rehabilitation pathways available under Nepali law.",
         ],
       },
@@ -125,7 +125,7 @@ export const programStories: Record<string, ProgramStory> = {
       { src: ngoMedia.drama.streetPlay1, caption: "Drug awareness street drama, March 2022" },
       { src: ngoMedia.drama.streetPlay2, caption: "Community awareness session" },
       { src: ngoMedia.drama.streetPlay3, caption: "Youth drug prevention programme" },
-      { src: ngoMedia.news.drugDrama, caption: "School performance, Sarlahi" },
+      { src: ngoMedia.news.drugDrama, caption: "School performance, Mahottari District, Samsi Village Municipality" },
     ],
   },
 

@@ -41,7 +41,7 @@ const fallbackSiteSettings: SiteSettings = {
   heroSubheadline:
     "Your support helps protect children, empower women, and restore dignity across Ishwarpur and surrounding villages.",
   livesImpacted: 15500,
-  districtsServed: 1,
+  districtsServed: 5,
   foundedYear: 2015,
   registrationNumber: "Registered NGO, Sarlahi",
   email: "newvisionnepalfoundation@gmail.com",
@@ -157,7 +157,7 @@ const fallbackNews: NewsPost[] = [
     author: "NVNF Awareness Team",
     publishedAt: "2022-03-26T00:00:00Z",
     excerpt:
-      "Lagu aushad सदक नाटक performances reached schools and village squares across Sarlahi, educating youth on substance abuse prevention.",
+      "Lagu aushad सदक नाटक performances reached schools and village squares in Mahottari District, Samsi Village Municipality, educating youth on substance abuse prevention.",
   },
   {
     _id: "n4",
@@ -307,7 +307,8 @@ const fallbackTimeline: TimelineEvent[] = [
     _id: "tl4",
     year: 2022,
     title: "Drug Awareness Street Drama",
-    description: "Lagu aushad सदक नाटक performances across schools and communities.",
+    description:
+      "Lagu aushad सदक नाटक performances in Mahottari District, Samsi Village Municipality.",
     order: 4,
   },
   {

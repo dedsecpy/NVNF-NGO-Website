@@ -8,6 +8,7 @@ import { useMotion } from "@/hooks/useMotion";
 import { formatUSD, nprToUsd } from "@/lib/utils";
 import { bankPayment, type OnlinePaymentMethod } from "@/lib/payments/bank";
 import { PaymentMethodLogo } from "@/components/donate/PaymentMethodLogo";
+import { Textarea } from "@/components/ui/Textarea";
 import { cn } from "@/lib/utils";
 
 const PAYMENT_METHODS: { id: OnlinePaymentMethod; label: string }[] = [
@@ -21,10 +22,43 @@ interface DonationModalProps {
   onClose: () => void;
 }
 
+function BankTransferDetails({ className }: { className?: string }) {
+  return (
+    <div className={cn("text-center", className)}>
+      <p className="text-sm font-medium text-charcoal">Or you can pay directly via QR</p>
+      <div className="mx-auto mt-3 w-fit rounded-xl border border-charcoal/10 bg-white p-3 shadow-sm">
+        <Image
+          src={bankPayment.qrImage}
+          alt="NVNF bank account QR code for direct transfer"
+          width={160}
+          height={160}
+          className="h-32 w-32 object-contain sm:h-36 sm:w-36"
+        />
+      </div>
+      <div className="mx-auto mt-3 rounded-lg bg-white/80 px-3 py-2 text-left text-xs text-charcoal/75">
+        <p className="font-semibold text-charcoal">{bankPayment.accountName}</p>
+        <p className="mt-1">
+          <span className="font-medium text-charcoal/85">Bank:</span> {bankPayment.bankName}
+        </p>
+        <p>
+          <span className="font-medium text-charcoal/85">Branch:</span> {bankPayment.branch}
+        </p>
+        <p>
+          <span className="font-medium text-charcoal/85">A/C Type:</span> {bankPayment.accountType}
+        </p>
+        <p className="mt-0.5">
+          <span className="font-medium text-charcoal/85">A/C No:</span> {bankPayment.accountNumber}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export function DonationModal({ isOpen, onClose }: DonationModalProps) {
   const [donorName, setDonorName] = useState("");
   const [amount, setAmount] = useState("");
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [paymentMethod, setPaymentMethod] = useState<OnlinePaymentMethod>("khalti");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -55,6 +89,7 @@ export function DonationModal({ isOpen, onClose }: DonationModalProps) {
           amount_usd: usdAmount,
           donor_name: donorName.trim(),
           donor_email: email || undefined,
+          donor_message: message.trim() || undefined,
           payment_method: paymentMethod,
         }),
       });
@@ -133,12 +168,8 @@ export function DonationModal({ isOpen, onClose }: DonationModalProps) {
                   </p>
                 </div>
               </div>
-              <div className="hidden flex-1 bg-section-beige p-5 text-sm leading-relaxed text-charcoal/80 md:block">
-                <p>
-                  Your donation funds meals, education, and emergency relief in communities
-                  where government services cannot reach. Every rupee is tracked and reported
-                  with full transparency.
-                </p>
+              <div className="bg-section-beige p-5 md:flex-1">
+                <BankTransferDetails />
               </div>
             </div>
 
@@ -197,6 +228,21 @@ export function DonationModal({ isOpen, onClose }: DonationModalProps) {
                   />
                 </div>
 
+                <div>
+                  <label htmlFor="donor-message" className="mb-1.5 block text-sm font-medium text-charcoal">
+                    Message <span className="font-normal text-charcoal/50">(optional)</span>
+                  </label>
+                  <Textarea
+                    id="donor-message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="Share why you're donating or a note for our team"
+                    rows={2}
+                    maxLength={500}
+                    className="min-h-[4.5rem] py-2 text-sm"
+                  />
+                </div>
+
                 <fieldset>
                   <legend className="mb-2 text-sm font-medium text-charcoal">Payment method</legend>
                   <div className="grid grid-cols-3 gap-2" role="radiogroup" aria-label="Payment method">
@@ -238,24 +284,6 @@ export function DonationModal({ isOpen, onClose }: DonationModalProps) {
                 >
                   {loading ? "Redirecting to payment…" : "Donate Now →"}
                 </button>
-
-                <div className="border-t border-charcoal/10 pt-5 text-center">
-                  <p className="text-sm font-medium text-charcoal">Or you can pay directly via QR</p>
-                  <div className="mx-auto mt-4 w-fit rounded-xl border border-charcoal/10 bg-white p-3 shadow-sm">
-                    <Image
-                      src={bankPayment.qrImage}
-                      alt="NVNF bank account QR code for direct transfer"
-                      width={160}
-                      height={160}
-                      className="h-40 w-40 object-contain"
-                    />
-                  </div>
-                  <p className="mt-3 text-xs leading-relaxed text-charcoal/60">
-                    {bankPayment.accountName}
-                    <br />
-                    {bankPayment.bankName} · {bankPayment.accountNumber}
-                  </p>
-                </div>
               </div>
             </div>
           </motion.div>

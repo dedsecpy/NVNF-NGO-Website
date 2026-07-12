@@ -36,7 +36,7 @@ const fallbackStories = [
     _id: "n3",
     title: "Drug Abuse Awareness Street Drama",
     excerpt:
-      "Lagu aushad सदक नाटक performances reached schools and village squares across Sarlahi.",
+      "Lagu aushad सदक नाटक performances reached schools and village squares in Mahottari District, Samsi Village Municipality.",
     slug: { current: "drug-abuse-street-drama" },
     publishedAt: "2022-03-26",
     image: siteImages.news3,
