@@ -252,13 +252,6 @@ const fallbackTeam: TeamMember[] = [
     order: 5,
   },
   {
-    _id: "t6",
-    name: "Shyam Sah",
-    role: "Board Member",
-    bio: "Ishwarpur-2, Sarlahi. Community representative on the NVNF board.",
-    order: 6,
-  },
-  {
     _id: "t7",
     name: "Madhav Pr. Bhattarai",
     role: "Board Member",
